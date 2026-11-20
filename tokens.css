@@ -1,0 +1,72 @@
+:root {
+  color-scheme: dark;
+
+  /* Typography Scale */
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+
+  --text-display: clamp(2.5rem, 4.5vw + 1rem, 4.8rem);
+  --text-section: clamp(1.85rem, 2.4vw + 0.9rem, 3.25rem);
+  --text-title: clamp(1.2rem, 0.75vw + 0.85rem, 1.55rem);
+  --text-lead: clamp(1.05rem, 0.35vw + 0.95rem, 1.25rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 200ms;
+  --dur-long: 400ms;
+
+  --container: 1440px;
+  --gutter: clamp(20px, 4vw, 64px);
+  --rule-hair: 1px;
+
+  /* PulseRelease Developer Console Palette */
+  --color-canvas: #090d16;
+  --color-header: #0d111a;
+  --color-surface: #121724;
+  --color-surface-elevated: #171d2c;
+  --color-surface-hover: #1c2336;
+  --color-input: #0e121d;
+
+  --color-ink: #f1f5f9;
+  --color-ink-2: #cbd5e1;
+  --color-muted: #94a3b8;
+  --color-subtle: #64748b;
+
+  --color-rule: rgba(255, 255, 255, 0.08);
+  --color-rule-2: rgba(255, 255, 255, 0.16);
+
+  /* Blue & Cyan Engine Accents */
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-cyan: #38bdf8;
+  --color-ok: #10b981;
+  --color-warning: #f59e0b;
+
+  --gradient-pulse: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+  --gradient-pulse-hover: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+
+  --font-display: "Host Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: var(--font-display);
+  --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+  --radius-sm: 6px;
+  --radius-card: 14px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 12px 36px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 32px rgba(37, 99, 235, 0.28);
+}
