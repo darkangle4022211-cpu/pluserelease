@@ -13,6 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" type="image/webp" href="./assets/release-staging.webp">
+  <link rel="preload" as="image" type="image/webp" href="./assets/registered-apps.webp">
+  <link rel="preload" as="image" type="image/webp" href="./assets/client-companion.webp">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -61,14 +64,36 @@
 
         <figure class="intro-stage">
           <div class="well ticks intro-well">
-            <img
-              id="hero-stage-img"
-              src="./assets/release-staging.jpg"
-              alt="PulseRelease Staging and Deployment desktop console with binary dropzone and manifest output"
-              width="1024"
-              height="556"
-              fetchpriority="high"
-            >
+            <div class="stage-frame" id="intro-stage-frame">
+              <img
+                class="stage-img is-visible"
+                src="./assets/release-staging.webp"
+                alt="PulseRelease Staging and Deployment desktop console with binary dropzone and manifest output"
+                width="1920"
+                height="993"
+                loading="eager"
+                decoding="sync"
+                fetchpriority="high"
+              >
+              <img
+                class="stage-img"
+                src="./assets/registered-apps.webp"
+                alt="PulseRelease Registered Applications hub tracking pluserelease, pulser audio, aeroplayer, and hyperdrain"
+                width="1920"
+                height="993"
+                loading="eager"
+                decoding="sync"
+              >
+              <img
+                class="stage-img"
+                src="./assets/client-companion.webp"
+                alt="PulseRelease Universal Client Companion SDK view with integrated updater scripts"
+                width="1920"
+                height="993"
+                loading="eager"
+                decoding="sync"
+              >
+            </div>
             <div class="intro-stage-bar" role="tablist" aria-label="Preview desktop view">
               <button type="button" class="stage-switch is-active" role="tab" aria-selected="true" data-hero-screen="0">Staging console</button>
               <button type="button" class="stage-switch" role="tab" aria-selected="false" data-hero-screen="1">Registered apps</button>
@@ -183,13 +208,35 @@
         </div>
 
         <figure class="well ticks ws-stage">
-          <img
-            id="ws-display-img"
-            src="./assets/registered-apps.png"
-            alt="PulseRelease Registered Applications dashboard showing pluserelease, pulser audio, aeroplayer, and hyperdrain"
-            width="1024"
-            height="556"
-          >
+          <div class="stage-frame" id="workspace-stage-frame">
+            <img
+              class="stage-img is-visible"
+              src="./assets/registered-apps.webp"
+              alt="PulseRelease Registered Applications dashboard showing pluserelease, pulser audio, aeroplayer, and hyperdrain"
+              width="1920"
+              height="993"
+              loading="eager"
+              decoding="sync"
+            >
+            <img
+              class="stage-img"
+              src="./assets/release-staging.webp"
+              alt="PulseRelease Staging and Deployment view computing cryptographic SHA-256 digests"
+              width="1920"
+              height="993"
+              loading="eager"
+              decoding="sync"
+            >
+            <img
+              class="stage-img"
+              src="./assets/client-companion.webp"
+              alt="PulseRelease Client Companion SDK view with multi-language code previews"
+              width="1920"
+              height="993"
+              loading="eager"
+              decoding="sync"
+            >
+          </div>
           <figcaption class="ws-meta">
             <p class="ws-caption" id="ws-display-caption">Multi-application hub tracking versions for PulseRelease, Pulsar Audio, AeroPlayer, and HyperDrain.</p>
           </figcaption>

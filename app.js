@@ -6,17 +6,17 @@ const CACHE_TTL_MS = 5 * 60 * 1000;
 
 const HERO_SCREENS = [
   {
-    src: "./assets/release-staging.jpg",
+    src: "./assets/release-staging.webp",
     alt: "PulseRelease Staging and Deployment desktop console with binary dropzone and manifest output",
     caption: "Drag-and-drop binary staging synced on 2026-10-14 21:19 UTC."
   },
   {
-    src: "./assets/registered-apps.png",
+    src: "./assets/registered-apps.webp",
     alt: "PulseRelease Registered Applications hub tracking pluserelease, pulser audio, aeroplayer, and hyperdrain",
     caption: "Manage connected desktop builds from a single application hub."
   },
   {
-    src: "./assets/client-companion.jpg",
+    src: "./assets/client-companion.webp",
     alt: "PulseRelease Universal Client Companion SDK view with integrated updater scripts",
     caption: "Copy embedded updater scripts directly into client builds."
   }
@@ -24,17 +24,17 @@ const HERO_SCREENS = [
 
 const WORKSPACE_DATA = [
   {
-    src: "./assets/registered-apps.png",
+    src: "./assets/registered-apps.webp",
     alt: "PulseRelease Registered Applications dashboard showing pluserelease, pulser audio, aeroplayer, and hyperdrain",
     caption: "Multi-application hub tracking versions for PulseRelease, Pulsar Audio, AeroPlayer, and HyperDrain."
   },
   {
-    src: "./assets/release-staging.jpg",
+    src: "./assets/release-staging.webp",
     alt: "PulseRelease Staging and Deployment view computing cryptographic SHA-256 digests",
     caption: "Developer Staging Console packaging release binaries and static update.json manifests."
   },
   {
-    src: "./assets/client-companion.jpg",
+    src: "./assets/client-companion.webp",
     alt: "PulseRelease Client Companion SDK view with multi-language code previews",
     caption: "Zero-dependency client updater templates for Python, POSIX shell, Kotlin, Tauri, and C++."
   }
@@ -264,10 +264,10 @@ async function fetchReleases() {
 }
 
 function initHeroStage() {
-  const img = document.getElementById("hero-stage-img");
+  const imgs = Array.from(document.querySelectorAll("#intro-stage-frame .stage-img"));
   const caption = document.getElementById("hero-stage-caption");
   const btns = Array.from(document.querySelectorAll("[data-hero-screen]"));
-  if (!img || !caption || !btns.length) return;
+  if (!imgs.length || !caption || !btns.length) return;
 
   btns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -279,8 +279,9 @@ function initHeroStage() {
         b.classList.toggle("is-active", active);
         b.setAttribute("aria-selected", active ? "true" : "false");
       });
-      img.src = item.src;
-      img.alt = item.alt;
+      imgs.forEach((img, i) => {
+        img.classList.toggle("is-visible", i === idx);
+      });
       caption.textContent = item.caption;
     });
   });
@@ -415,9 +416,9 @@ function initSdkPlayground() {
 
 function initWorkspaceWalkthrough() {
   const tabs = Array.from(document.querySelectorAll(".ws-tab"));
-  const imgEl = document.getElementById("ws-display-img");
+  const stageImgs = Array.from(document.querySelectorAll("#workspace-stage-frame .stage-img"));
   const captionEl = document.getElementById("ws-display-caption");
-  if (!tabs.length || !imgEl || !captionEl) return;
+  if (!tabs.length || !stageImgs.length || !captionEl) return;
 
   tabs.forEach((tab, idx) => {
     tab.addEventListener("click", () => {
@@ -428,8 +429,9 @@ function initWorkspaceWalkthrough() {
         t.classList.toggle("is-active", active);
         t.setAttribute("aria-selected", active ? "true" : "false");
       });
-      imgEl.src = item.src;
-      imgEl.alt = item.alt;
+      stageImgs.forEach((img, i) => {
+        img.classList.toggle("is-visible", i === idx);
+      });
       captionEl.textContent = item.caption;
     });
   });
@@ -547,7 +549,16 @@ function initReviewForm() {
   });
 }
 
+function warmStageImages() {
+  document.querySelectorAll(".stage-img").forEach((img) => {
+    if (img.decode) {
+      img.decode().catch(() => {});
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  warmStageImages();
   fetchReleases();
   initHeroStage();
   initSandbox();
