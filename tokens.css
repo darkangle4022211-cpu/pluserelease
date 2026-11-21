@@ -1,7 +1,6 @@
 :root {
   color-scheme: dark;
 
-  /* Typography Scale */
   --space-3xs: 2px;
   --space-2xs: 4px;
   --space-xs: 8px;
@@ -11,6 +10,7 @@
   --space-xl: 40px;
   --space-2xl: 64px;
   --space-3xl: 96px;
+  --space-4xl: 144px;
 
   --text-xs: 0.8125rem;
   --text-sm: 0.875rem;
@@ -20,53 +20,66 @@
   --text-2xl: 1.953rem;
   --text-3xl: 2.441rem;
 
-  --text-display: clamp(2.5rem, 4.5vw + 1rem, 4.8rem);
-  --text-section: clamp(1.85rem, 2.4vw + 0.9rem, 3.25rem);
-  --text-title: clamp(1.2rem, 0.75vw + 0.85rem, 1.55rem);
-  --text-lead: clamp(1.05rem, 0.35vw + 0.95rem, 1.25rem);
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem);
+  --text-display: clamp(2.65rem, 4.4vw + 0.85rem, 4.75rem);
+  --text-section: clamp(2rem, 2.4vw + 0.9rem, 3.25rem);
+  --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.5625rem);
+  --text-lead: clamp(1.0625rem, 0.35vw + 0.95rem, 1.3125rem);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-short: 200ms;
-  --dur-long: 400ms;
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
 
   --container: 1440px;
-  --gutter: clamp(20px, 4vw, 64px);
-  --rule-hair: 1px;
+  --gutter: 64px;
+  --gap-columns: 32px;
+  --section-gap-s: 120px;
+  --section-gap: 144px;
+  --section-gap-l: 176px;
+  --banner-height: 72px;
 
-  /* PulseRelease Developer Console Palette */
-  --color-canvas: #090d16;
-  --color-header: #0d111a;
-  --color-surface: #121724;
-  --color-surface-elevated: #171d2c;
-  --color-surface-hover: #1c2336;
-  --color-input: #0e121d;
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
 
-  --color-ink: #f1f5f9;
-  --color-ink-2: #cbd5e1;
-  --color-muted: #94a3b8;
-  --color-subtle: #64748b;
+  /* Rim: station nocturnal blueprint ground */
+  --color-paper: oklch(15% 0.035 262);
+  --color-paper-2: oklch(19% 0.042 262);
+  --color-paper-3: oklch(11.5% 0.028 262);
 
-  --color-rule: rgba(255, 255, 255, 0.08);
-  --color-rule-2: rgba(255, 255, 255, 0.16);
+  --color-ink: oklch(95% 0.010 240);
+  --color-ink-2: oklch(84% 0.014 240);
+  --color-muted: oklch(68% 0.020 245);
+  --color-muted-2: oklch(52% 0.020 245);
 
-  /* Blue & Cyan Engine Accents */
-  --color-accent: #2563eb;
-  --color-accent-hover: #1d4ed8;
-  --color-cyan: #38bdf8;
-  --color-ok: #10b981;
-  --color-warning: #f59e0b;
+  --color-rule: oklch(30% 0.045 262);
+  --color-rule-2: oklch(22% 0.035 262);
 
-  --gradient-pulse: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
-  --gradient-pulse-hover: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  --color-accent: oklch(84% 0.10 200);
+  --color-accent-hover: oklch(88% 0.09 200);
+  --color-accent-ink: oklch(13% 0.03 262);
+  --color-accent-2: oklch(76% 0.14 55);
+  --color-focus: oklch(84% 0.10 200);
 
-  --font-display: "Host Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-ok: oklch(78% 0.12 160);
+  --color-error: oklch(72% 0.15 25);
+
+  --font-display: "Switzer", ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-display);
-  --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  --font-outlier: "Geist Mono", ui-monospace, monospace;
 
-  --radius-sm: 6px;
-  --radius-card: 14px;
-  --radius-pill: 9999px;
-
-  --shadow-card: 0 12px 36px rgba(0, 0, 0, 0.45);
-  --shadow-glow: 0 0 32px rgba(37, 99, 235, 0.28);
+  --radius-card: 0;
+  --radius-pill: 0;
+  --rule-hair: 1px;
+  --shadow-card: none;
+  --tracking-display: -0.035em;
+  --display-weight: 500;
 }
